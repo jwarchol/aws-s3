@@ -166,8 +166,8 @@ class FasterXmlSimple
       result = {}
       element.each_attr do |attribute| 
         name = attribute.name
-        name = [attribute.ns, attribute.name].join(':') if attribute.ns?
-        result[name] = attribute.value 
+        name = [attribute.namespace, attribute.name].join(':') if attribute.namespace.nil?
+        result[name] = attribute.content 
       end
       result
     end
